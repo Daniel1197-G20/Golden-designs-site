@@ -1,15 +1,25 @@
-import React from 'react';
-import "../App.css"
+import React from "react";
+import { Github, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="container">
-        <p>&copy; 2025 Blessing Gold. All rights reserved.</p>
-        <div style={{marginTop:'1rem'}}>
-          <a href="#" style={{margin:'0 10px', color:'#ff6b6b'}}>Behance</a>
-          <a href="#" style={{margin:'0 10px', color:'#ff6b6b'}}>Dribbble</a>
-          <a href="#" style={{margin:'0 10px', color:'#ff6b6b'}}>Instagram</a>
+    <footer className="footer">
+      <div className="container footer-container">
+        <div className="footer-content">
+          <p className="footer-text">
+            © 2025 Your Name. Crafted with precision in Nigeria
+          </p>
+          <div className="social-links">
+            <a href="https://github.com/yourusername" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <Github size={26} />
+            </a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <Linkedin size={26} />
+            </a>
+            <a href="https://twitter.com/yourusername" target="_blank" rel="noreferrer" aria-label="Twitter">
+              <Twitter size={26} />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,60 +1,73 @@
 import React, { useState } from 'react';
-import "../App.css"
+import "../App.css";
 
-
+// Only import the ONE image you actually have
+import Gallery1 from '../assets/Gallery-1.jpeg';
+import Gallery2 from '../assets/Gallery2.jpeg';
+import Gallery3 from '../assets/Gallery3.jpeg';
+import Gallery4 from '../assets/Gallery4.jpeg';
 const Gallery = () => {
   const [filter, setFilter] = useState('all');
 
   const projects = [
-    { id: 1, category: 'branding', title: 'Nike Rebrand 2025', img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800' },
-    { id: 2, category: 'poster', title: 'Neon Dreams Poster', img: 'https://images.unsplash.com/photo-1614149162883-504ce4d13909?w=800' },
-    { id: 3, category: 'logo', title: 'Minimal Tech Logos', img: 'https://images.unsplash.com/photo-1626785774625-c135d6f22614?w=800' },
-    { id: 4, category: 'branding', title: 'Luxury Coffee Brand', img: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800' },
-    { id: 5, category: 'poster', title: 'Typography Series', img: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800' },
-    { id: 6, category: 'ui', title: 'Banking App UI Kit', img: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800' },
-    { id: 7, category: 'logo', title: 'Startup Identity', img: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800' },
-    { id: 8, category: 'branding', title: 'Fashion Lookbook', img: 'https://images.unsplash.com/photo-1574063346896-9f20196d2d10?w=800' },
-    { id: 9, category: 'logo', title: 'Startup Identity', img: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800' },
-    { id: 10, category: 'logo', title: 'Startup Identity', img: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800' },
-    { id: 11, category: 'logo', title: 'Startup Identity', img: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800' },
-    { id: 12, category: 'logo', title: 'Startup Identity', img: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800' },
-
+    { id: 1, category: 'branding', title: 'Nike Rebrand 2025', img: Gallery1, link: '#' },
+    { id: 2, category: 'poster', title: 'Neon Dreams Poster Series', img: Gallery2, link: '#' },
+    { id: 3, category: 'logo', title: 'Quantum Tech Logo', img:  Gallery3, link: '#' },
+    { id: 4, category: 'branding', title: 'LUXE Coffee Identity', img:  Gallery4, link: '#' },
+    { id: 5, category: 'poster', title: 'Typography Mastery', img: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800&auto=format', link: '#' },
+    { id: 6, category: 'ui', title: 'Nova Bank App', img: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&auto=format', link: '#' },
+    { id: 7, category: 'logo', title: 'Evergreen Eco Brand', img: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&auto=format', link: '#' },
+    { id: 8, category: 'branding', title: 'VOGUE Future Lookbook', img: 'https://images.unsplash.com/photo-1574063346896-9f20196d2d10?w=800&auto=format', link: '#' },
+    { id: 9, category: 'ui', title: 'TaskFlow Dashboard', img: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format', link: '#' },
+    { id: 10, category: 'poster', title: 'Retro Wave Festival', img: 'https://images.unsplash.com/photo-1500468756762-a401b6f17b46?w=800&auto=format', link: '#' },
+    { id: 11, category: 'logo', title: 'Aurora Studio', img: 'https://images.unsplash.com/photo-1549924231-f129b911e442?w=800&auto=format', link: '#' },
+    { id: 12, category: 'branding', title: 'Serenity Spa & Wellness', img: 'https://images.unsplash.com/photo-1551887373-4ed0e67b2f8c?w=800&auto=format', link: '#' },
   ];
 
-  const filtered = filter === 'all' ? projects : projects.filter(p => p.category === filter);
+  const filteredProjects = filter === 'all' 
+    ? projects 
+    : projects.filter(p => p.category === filter);
 
   return (
     <section id="gallery" className="gallery-section">
       <div className="container">
         <h2 className="section-title">My Gallery</h2>
+        <p className="section-subtitle">Selected works from 2024–2025</p>
 
         <div className="filters">
-          {['all', 'branding', 'logo', 'poster', 'ui'].map(cat => (
+          {['all', 'branding', 'logo', 'poster', ].map(cat => (
             <button
               key={cat}
               className={`filter-btn ${filter === cat ? 'active' : ''}`}
               onClick={() => setFilter(cat)}
             >
-              {cat.charAt(0).toUpperCase() + cat.slice(1)}
+              {cat === 'all' ? 'All Works' : cat.charAt(0).toUpperCase() + cat.slice(1)}
             </button>
           ))}
         </div>
 
         <div className="gallery-grid">
-          {filtered.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <div
               key={project.id}
               className="gallery-item"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="gallery-card">
-                <img src={project.img} alt={project.title} />
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  loading="lazy"
+                  className="gallery-image"
+                />
                 <div className="gallery-overlay">
-                  <h3>{project.title}</h3>
-                  <p>{project.category.toUpperCase()}</p>
-                  <a href={project.img} target="_blank" rel="noopener noreferrer" className="view-btn">
-                    View Project
-                  </a>
+                  <div className="overlay-content">
+                    <h3>{project.title}</h3>
+                    <p>{project.category.toUpperCase()}</p>
+                    <a href={project.link} className="view-btn" target="_blank" rel="noopener noreferrer">
+                      View Project
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

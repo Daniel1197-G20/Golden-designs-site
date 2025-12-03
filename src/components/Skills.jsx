@@ -12,20 +12,26 @@ import {
 
 const Skills = () => {
   const skills = [
-    { name: "Photoshop",       icon: <SiAdobephotoshop /> },
-    { name: "Illustrator",     icon: <SiAdobeillustrator /> },
-    { name: "Figma",           icon: <FaFigma /> },              // Using FA6 version (clean & monochrome)
+    { name: "Flyers",       icon: <SiAdobephotoshop /> },
+    { name: "Poster",     icon: <SiAdobeillustrator /> },
+    { name: "Brochure",           icon: <FaFigma /> },              // Using FA6 version (clean & monochrome)
     // { name: "Figma",        icon: <SiFigmaFallback /> },    // Uncomment for colored Figma logo
-    { name: "Branding",        icon: <FaPalette /> },
-    { name: "Typography",      icon: <FaFont /> },
-    { name: "UI/UX Design",    icon: <FaMobileAlt /> },
-    { name: "Vector Design",   icon: <FaVectorSquare /> },
+    { name: "Magazine Design",        icon: <FaPalette /> },
+    { name: "Business Card",      icon: <FaFont /> },
+    { name: "Letter Head",    icon: <FaMobileAlt /> },
+    { name: "Logo Formation",   icon: <FaVectorSquare /> },
+    { name: "Invitaion Card",        icon: <FaPalette /> },
+    { name: "Birthday Designs",      icon: <FaFont /> },
+    { name: "General Printing",    icon: <FaMobileAlt /> },
+    { name: "Magazine Design",   icon: <FaVectorSquare /> },
+    { name: "Magazine Design",   icon: <FaVectorSquare /> },
+
   ];
 
   return (
     <section id="skills" className="skills">
       <div className="container">
-        <h2 className="section-title">Skills &amp; Tools</h2>
+        <h2 className="section-title">Skills &amp;Services</h2>
 
         <div className="skills-grid">
           {skills.map((skill, index) => (
