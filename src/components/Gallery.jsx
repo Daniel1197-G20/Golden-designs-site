@@ -6,6 +6,8 @@ import Gallery1 from '../assets/Gallery-1.jpeg';
 import Gallery2 from '../assets/Gallery2.jpeg';
 import Gallery3 from '../assets/Gallery3.jpeg';
 import Gallery4 from '../assets/Gallery4.jpeg';
+import Gallery5 from '../assets/Gallery5.jpeg';
+
 const Gallery = () => {
   const [filter, setFilter] = useState('all');
 
@@ -14,7 +16,7 @@ const Gallery = () => {
     { id: 2, category: 'poster', title: 'Neon Dreams Poster Series', img: Gallery2, link: '#' },
     { id: 3, category: 'logo', title: 'Quantum Tech Logo', img:  Gallery3, link: '#' },
     { id: 4, category: 'branding', title: 'LUXE Coffee Identity', img:  Gallery4, link: '#' },
-    { id: 5, category: 'poster', title: 'Typography Mastery', img: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800&auto=format', link: '#' },
+    { id: 5, category: 'poster', title: 'Typography Mastery', img: Gallery5, link: '#' },
     { id: 6, category: 'ui', title: 'Nova Bank App', img: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&auto=format', link: '#' },
     { id: 7, category: 'logo', title: 'Evergreen Eco Brand', img: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&auto=format', link: '#' },
     { id: 8, category: 'branding', title: 'VOGUE Future Lookbook', img: 'https://images.unsplash.com/photo-1574063346896-9f20196d2d10?w=800&auto=format', link: '#' },

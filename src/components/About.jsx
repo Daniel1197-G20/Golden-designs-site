@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../App.css";
+import profilep from '../assets/profilep.jpeg';
 
 const About = () => {
   const lines = [
-    "I'm a passionate photographer & graphic designer with 6+ years of experience capturing love stories, creating stunning visuals, and delivering memorable moments.",
-    "Weddings | Portraits | Events | Branding — I bring creativity and excellence to every project.",
+    "I’m a graphic designer who loves turning ideas into clean, creative visuals. From logos to flyers and social media designs, I help brands stand out with designs that speak. Let’s create something awesome together..",
   ];
 
   return (
@@ -22,7 +22,7 @@ const About = () => {
         </motion.h2>
 
         <div className="about-content">
-          {/* Left: Clean, sweet typing text */}
+        
           <div className="about-text ai-typing">
             {lines.map((line, i) => (
               <SweetTyping key={i} text={line} delay={i * 1.6} />
@@ -42,7 +42,7 @@ const About = () => {
             </motion.a>
           </div>
 
-          {/* Right: Your flyer */}
+        
           <motion.div
             className="about-img"
             initial={{ opacity: 0, x: 60, scale: 0.92 }}
@@ -52,7 +52,7 @@ const About = () => {
             whileHover={{ scale: 1.04 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600"
+              src={profilep}
               alt="Shot by Jemmy"
               className="rounded-2xl shadow-2xl w-full"
             />
@@ -63,7 +63,6 @@ const About = () => {
   );
 };
 
-// Sweet, smooth, no-cursor typing component
 const SweetTyping = ({ text, delay = 0 }) => {
   const words = text.split(" ");
 
@@ -82,7 +81,7 @@ const SweetTyping = ({ text, delay = 0 }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{
-            delay: delay + i * 0.06,        // 60ms per word → feels natural & sweet
+            delay: delay + i * 0.09,       
             duration: 0.5,
             ease: "easeOut",
           }}
