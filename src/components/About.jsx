@@ -23,6 +23,7 @@ const About = () => {
         </motion.h2>
 
         <div className="about-content">
+          {/* Text Content */}
           <div className="about-text ai-typing">
             {lines.map((line, i) => (
               <SweetTyping key={i} text={line} delay={i * 1.8} />
@@ -42,25 +43,23 @@ const About = () => {
             </motion.a>
           </div>
 
-          {/* Enhanced Image Container */}
+          {/* Rounded Portrait Image */}
           <motion.div
             className="about-img-container"
             initial={{ opacity: 0, x: 60, scale: 0.9 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-            whileHover={{ scale: 1.04 }}
+            whileHover={{ scale: 1.05 }}
           >
-            <div className="about-img-wrapper">
+            <div className="about-img-wrapper-rounded">
               <img
                 src={profilep}
                 alt="Portrait"
-                className="about-profile-img"
+                className="about-profile-img-rounded"
               />
-              {/* Decorative Overlay Elements */}
-              <div className="img-accent-top"></div>
-              <div className="img-accent-bottom"></div>
-              <div className="img-glow"></div>
+              {/* Subtle glow overlay on hover */}
+              <div className="img-glow-rounded"></div>
             </div>
           </motion.div>
         </div>
@@ -78,7 +77,7 @@ const SweetTyping = ({ text, delay = 0 }) => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.4 }}
-      className="leading-relaxed text-lg"
+      className="leading-relaxed text-lg mb-6"
     >
       {words.map((word, i) => (
         <motion.span
